@@ -55,3 +55,19 @@ To use a model with the nodes, you should clone its repository with git or manua
 git install lfs
 git clone https://huggingface.co/turboderp/Llama-3-8B-Instruct-exl2 -b 6.0bpw models/llm/Llama-3-8B-Instruct-exl2-6.0bpw
 ```
+
+play with the llama3 instruction template like the panel as below:
+```text
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+Come up with a detailed unique Stable Diffusion prompt,the prompt should always begin with like this:This video shows or The video features<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+This video shows the majestic beauty of a waterfall cascading down a cliff into a serene lake.The waterfall,with its powerful flow,is the central focus of the video.The surrounding landscape is lush and green,with trees and folige adding to the natural beauty of the scene.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+How about another one?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+The video features a young woman with black eyes and blonde hair standing in a forrest wearing a crown.She seems to be lost in thought,and the camera focuses on her face.The atmosphere is serene,adn the shot is in slow motion.The video is of high quality,and the view is very clear.High quality,masterpiece,best quality,highres,ultra-detailed,fantastic.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+only generate one more,tulips<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+```
+you can change the subject of prompt from tulips to flowers, fire, man,woman or whatever
