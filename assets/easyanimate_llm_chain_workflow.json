@@ -1,0 +1,353 @@
+{
+  "last_node_id": 538,
+  "last_link_id": 1588,
+  "nodes": [
+    {
+      "id": 538,
+      "type": "FrankChiengEasyAnimateGenerator",
+      "pos": [
+        -325,
+        24
+      ],
+      "size": [
+        697.5817835425569,
+        387.08358588915485
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 1588,
+          "widget": {
+            "name": "prompt"
+          },
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1587
+          ],
+          "shape": 3,
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FrankChiengEasyAnimateGenerator"
+      },
+      "widgets_values": [
+        "",
+        "The video is not of a high quality, it has a low resolution, and the audio quality is not clear. Strange motion trajectory, a poor composition and deformed video, low resolution, duplicate and ugly, strange body structure, long and strange neck, bad teeth, bad eyes, bad limbs, bad hands, rotating camera, blurry camera, shaking camera. Deformation, low-resolution, blurry, ugly, distortion.",
+        "/home/qm/ComfyUI/models/EasyAnimate/Diffusion_Transformer/EasyAnimateV2-XL-2-768x768/",
+        "none",
+        0.55,
+        "Euler",
+        50,
+        736,
+        512,
+        144,
+        7,
+        1024,
+        "randomize"
+      ]
+    },
+    {
+      "id": 489,
+      "type": "ZuellniTextPreviewer",
+      "pos": [
+        -335,
+        463
+      ],
+      "size": {
+        "0": 965.90771484375,
+        "1": 641.9136352539062
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1519,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ZuellniTextPreviewer"
+      },
+      "widgets_values": [
+        "",
+        "This video shows a mesmerizing close-up of a coffee bean slowly rotating in mid-air, illuminated by a warm golden light as it releases its aromatic fragrance into the air. The camera zooms in on the intricate patterns on the bean's surface, revealing the complex textures and crevices that hint at the rich flavors and scents that await. As the bean rotates, the light catches the subtle ridges and valleys, casting tiny shadows that dance across the surface. The shot is in slow motion, allowing the viewer to fully appreciate the intricate details and the intoxicating aroma that fills the air."
+      ]
+    },
+    {
+      "id": 487,
+      "type": "ZuellniExLlamaLoader",
+      "pos": [
+        -768,
+        117
+      ],
+      "size": {
+        "0": 390,
+        "1": 110
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "EXL_MODEL",
+          "links": [
+            1516
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ZuellniExLlamaLoader"
+      },
+      "widgets_values": [
+        "Llama-3-8B-Instruct-exl2-6.0bpw",
+        4,
+        4096
+      ]
+    },
+    {
+      "id": 525,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        399,
+        -93
+      ],
+      "size": [
+        315,
+        509
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1587,
+          "label": "images",
+          "slot_index": 0
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null,
+          "label": "audio"
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "label": "meta_batch"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "label": "Filenames"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "EasyAnimate",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "EasyAnimate_00009.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 491,
+      "type": "PrimitiveNode",
+      "pos": [
+        -1053,
+        286
+      ],
+      "size": [
+        265.550488903139,
+        101.83727715590629
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1523
+          ],
+          "widget": {
+            "name": "seed"
+          },
+          "label": "INT"
+        }
+      ],
+      "title": "Seed",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        644498647742352,
+        "decrement"
+      ]
+    },
+    {
+      "id": 488,
+      "type": "ZuellniExLlamaGenerator",
+      "pos": [
+        -767,
+        280
+      ],
+      "size": {
+        "0": 390,
+        "1": 610
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "EXL_MODEL",
+          "link": 1516,
+          "label": "model"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 1523,
+          "widget": {
+            "name": "seed"
+          },
+          "slot_index": 1,
+          "label": "seed"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            1519,
+            1588
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "TEXT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ZuellniExLlamaGenerator"
+      },
+      "widgets_values": [
+        true,
+        true,
+        120,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0.1,
+        1,
+        true,
+        644498647742352,
+        "randomize",
+        "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nCome up with a detailed unique Stable Diffusion prompt,the prompt should always begin with like this:This video shows or The video features<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThis video shows the majestic beauty of a waterfall cascading down a cliff into a serene lake.The waterfall,with its powerful flow,is the central focus of the video.The surrounding landscape is lush and green,with trees and folige adding to the natural beauty of the scene.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nHow about another one?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nThe video features a young woman with black eyes and blonde hair standing in a forrest wearing a crown.She seems to be lost in thought,and the camera focuses on her face.The atmosphere is serene,adn the shot is in slow motion.The video is of high quality,and the view is very clear.High quality,masterpiece,best quality,highres,ultra-detailed,fantastic.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nonly generate one more,coffee beans<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1516,
+      487,
+      0,
+      488,
+      0,
+      "EXL_MODEL"
+    ],
+    [
+      1519,
+      488,
+      0,
+      489,
+      0,
+      "STRING"
+    ],
+    [
+      1523,
+      491,
+      0,
+      488,
+      1,
+      "INT"
+    ],
+    [
+      1587,
+      538,
+      0,
+      525,
+      0,
+      "IMAGE"
+    ],
+    [
+      1588,
+      488,
+      0,
+      538,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000022,
+      "offset": [
+        1101.2200468969786,
+        183.26090125076544
+      ]
+    }
+  },
+  "version": 0.4
+}
