@@ -1,0 +1,15 @@
+[project]
+name = "comfyui_llm_easyanimiate"
+description = "implementation easyanimate with llama3-8b-6bit instruction LLM generation prompt help"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["torch==2.3.0+cu121", "torchvision==0.18.0+cu121", "Pillow", "einops", "safetensors", "timm", "tomesd", "accelerate", "torchdiffeq", "torchsde", "xformers", "decord", "datasets", "numpy", "scikit-image", "opencv-python", "omegaconf", "SentencePiece", "albumentations", "diffusers==0.27.0", "transformers==4.37.2", "beautifulsoup4", "ftfy", "exllamav2>=0.0.17"]
+
+[project.urls]
+Repository = "https://github.com/frankchieng/ComfyUI_llm_easyanimiate"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_llm_easyanimiate"
+Icon = ""
