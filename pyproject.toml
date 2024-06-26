@@ -10,6 +10,6 @@ Repository = "https://github.com/frankchieng/ComfyUI_llm_easyanimiate"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "frankchieng"
 DisplayName = "ComfyUI_llm_easyanimiate"
 Icon = ""
